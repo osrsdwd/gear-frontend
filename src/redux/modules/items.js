@@ -8,7 +8,7 @@ export const getAllItemsRoutine = createRoutine('react-ui/auth/GET_ALL_ITEMS')
 
 // Reducer
 export default handleActions({
-  [getAllItemsRoutine.SUCCESS]: (state, { payload }) => R .pipe(R.concat, R.uniq)(state, payload)
+  [getAllItemsRoutine.SUCCESS]: (state, { payload }) => R.pipe(R.concat, R.uniq)(state, payload)
 }, [])
 
 // Action creators
