@@ -1,7 +1,7 @@
 import R from 'ramda'
 import { createAction, handleActions } from 'redux-actions'
 import { createRoutine } from 'redux-routines'
-import oauth from '../../oauth'
+import api from '../../api'
 
 // Actions
 export const getAllItemsRoutine = createRoutine('react-ui/auth/GET_ALL_ITEMS')
@@ -17,7 +17,7 @@ export default handleActions({
 export const getAllItems = createAction(getAllItemsRoutine.TRIGGER, () => async (dispatch) => {
   try {
     dispatch(getAllItemsRoutine.request())
-    const response = await oauth.wrapFailure(dispatch, oauth.fetch('items/all', {
+    const response = await api.wrapFailure(dispatch, api.fetch('items/all', {
       method: 'GET'
     }))
 
